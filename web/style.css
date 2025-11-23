@@ -32,17 +32,33 @@ h1 {
     padding-top: 20%;
 }
 
-/* Images */
-.damso {
-    position: absolute;
-    bottom: 400px;
-    left: 400px;
-    width: 300px;
+a {
+  display: block;        /* le lien devient un bloc */
+  position: absolute;    /* on peut le placer où on veut */
 }
 
-.laylow {
-    position: absolute;
-    bottom: 400px;
-    right: 400px;
-    width: 300px;
+/* Damso */
+.damso-link {
+  bottom: 400px;
+  left: 400px;
+  width: 300px;
+}
+
+.damso-link img {
+  width: 100%;           /* l'image occupe toute la largeur du lien */
+  height: auto;
+  display: block;
+}
+
+/* Laylow */
+.laylow-link {
+  bottom: 400px;
+  right: 400px;
+  width: 300px;
+}
+
+.laylow-link img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
