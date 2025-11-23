@@ -14,7 +14,7 @@ body {
   z-index: -1;
 }
 
-/* Contenu */
+/* Contenu global */
 .content {
   position: relative;
   z-index: 1;
@@ -25,7 +25,43 @@ body {
   padding: 40px;
 }
 
-/* Mise en page Damso */
+/* ========================= */
+/* Page d'accueil            */
+/* ========================= */
+.artist-links {
+  display: flex;
+  justify-content: center;   /* centre horizontalement */
+  align-items: center;       /* centre verticalement */
+  gap: 100px;                /* espace entre Damso et Laylow */
+  height: 100vh;             /* occupe toute la hauteur de la page */
+}
+
+.artist-link {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.artist-link img {
+  width: 250px;              /* taille moyenne */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.artist-link img:hover {
+  transform: scale(1.05);
+}
+
+.artist-link p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ========================= */
+/* Page Damso                */
+/* ========================= */
 .damso-container {
   display: flex;
   gap: 40px;
@@ -33,6 +69,7 @@ body {
   justify-content: center;
 }
 
+/* Bloc album à gauche */
 .album-info {
   flex: 1;
   max-width: 250px;
@@ -47,6 +84,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* Liste des morceaux à droite */
 .track-list {
   flex: 2;
 }
@@ -57,6 +95,7 @@ body {
   margin: 0;
 }
 
+/* Chaque morceau */
 .track-item {
   display: flex;
   align-items: center;
@@ -71,6 +110,7 @@ body {
   background: rgba(255,255,255,0.1);
 }
 
+/* Image de pochette du morceau */
 .track-cover {
   width: 60px;
   height: 60px;
@@ -79,6 +119,7 @@ body {
   margin-right: 15px;
 }
 
+/* Détails du morceau */
 .track-details {
   display: flex;
   flex-direction: column;
@@ -90,74 +131,52 @@ body {
 }
 
 .track-details a {
-  color: #1DB954;
+  color: #1DB954; /* vert Spotify */
   text-decoration: none;
   font-size: 0.9em;
 }
-.track-item {
+
+/* ========================= */
+/* Page Laylow               */
+/* ========================= */
+.laylow-container {
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  background: rgba(255,255,255,0.05);
-  padding: 10px;
-  border-radius: 8px;
-  transition: background 0.3s;
+  flex-direction: column;   /* empile les éléments */
+  align-items: center;      /* centre horizontalement */
+  gap: 20px;
+  padding: 40px;
 }
 
-.track-item:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-.track-cover {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-right: 15px;
-}
-
-.track-details {
-  display: flex;
-  flex-direction: column;
-}
-
-.track-name {
-  font-weight: bold;
-  margin: 0 0 5px 0;
-}
-
-.track-details a {
-  color: #1DB954;
-  text-decoration: none;
-  font-size: 0.9em;
-}
-/* Liens artistes sur la page d'accueil */
-.artist-links {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 60px;
-}
-
-.artist-link {
-  text-align: center;
-  color: white;
-  text-decoration: none;
-}
-
-.artist-link img {
-  width: 200px;
-  height: auto;
+.laylow-cover {
+  max-width: 300px;         /* limite la largeur */
+  height: auto;             /* garde les proportions */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
+  display: block;
+  margin: 20px auto;        /* centre l’image */
 }
 
-.artist-link img:hover {
-  transform: scale(1.05);
+.laylow-details {
+  text-align: center;
+  color: black;
 }
 
-.artist-link p {
-  margin-top: 10px;
-  font-weight: bold;
+.laylow-details p {
+  margin: 5px 0;
+  color: black;
+}
+
+.laylow-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #1DB954;      /* vert Spotify */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.laylow-link:hover {
+  background: #17a74a;
 }

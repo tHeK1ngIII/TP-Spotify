@@ -7,22 +7,25 @@
 </head>
 <body>
   <div class="background"></div>
-  <div class="content page">
-    <h1>{{.Name}}</h1>
+  <div class="content">
+    <div class="laylow-container">
+      <h1>{{.Name}}</h1>
 
-    {{if .Album.Images}}
-      <img class="album-cover" src="{{(index .Album.Images 0).Url}}" alt="{{.Album.Name}}">
-    {{else}}
-      <p>Aucune image disponible</p>
-    {{end}}
+      {{if .Album.Images}}
+        <img class="laylow-cover" src="{{(index .Album.Images 0).Url}}" alt="{{.Album.Name}}">
+      {{else}}
+        <p>Aucune image disponible</p>
+      {{end}}
 
-    <p>Artiste : {{(index .Artists 0).Name}}</p>
-    <p>Album : {{.Album.Name}}</p>
-    <p>Date de sortie : {{.Album.ReleaseDate}}</p>
-
-    <a class="track-item" href="{{.ExternalUrls.Spotify}}" target="_blank">
-      Écouter sur Spotify ↗
-    </a>
+      <div class="laylow-details">
+        <p>Artiste : {{(index .Artists 0).Name}}</p>
+        <p>Album : {{.Album.Name}}</p>
+        <p>Date de sortie : {{.Album.ReleaseDate}}</p>
+        <a class="laylow-link" href="{{.ExternalUrls.Spotify}}" target="_blank">
+          🎧 Écouter sur Spotify
+        </a>
+      </div>
+    </div>
   </div>
 </body>
 </html>

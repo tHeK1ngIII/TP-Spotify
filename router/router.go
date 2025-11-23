@@ -1,21 +1,23 @@
-package router
+package controller
 
 import (
+	"html/template"
 	"net/http"
-	"tpspotify/controller"
 )
 
-func New() http.Handler {
-	mux := http.NewServeMux()
+// --- Templates ---
+func renderTemplate(w http.ResponseWriter, filename string, data interface{}) {
+	tmpl := template.Must(template.ParseFiles("template/" + filename))
+	_ = tmpl.Execute(w, data)
+}
 
-	// Fichiers statiques (CSS + images)
-	mux.Handle("/style.css", http.FileServer(http.Dir("web")))
-	mux.Handle("/image/", http.StripPrefix("/image/", http.FileServer(http.Dir("web/image"))))
+// --- Home ---
+func Home(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "index.html", nil)
+}
 
-	// Routes
-	mux.HandleFunc("/", controller.Home)
-	mux.HandleFunc("/album/damso", controller.DamsoAlbum)
-	mux.HandleFunc("/track/laylow", controller.LaylowSong)
-
-	return mux
+// --- Laylow ---
+func LaylowSong(w http.ResponseWriter, r *http.Request) {
+	// Exemple minimal
+	renderTemplate(w, "laylow.html", nil)
 }
