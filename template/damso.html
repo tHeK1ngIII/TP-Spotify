@@ -9,24 +9,33 @@
   <div class="background"></div>
   <div class="content page damso-container">
     
-    <!-- Album à gauche -->
+    <!-- Bloc album -->
     <div class="album-info">
-      <img class="album-cover" src="{{.AlbumCover}}" alt="{{.AlbumName}}">
-      <h1>{{.AlbumName}} — Damso</h1>
-      <p>Date de sortie : {{.ReleaseDate}}</p>
+      {{if .AlbumCover}}
+        <img class="album-cover" src="{{.AlbumCover}}" alt="{{.AlbumName}}">
+      {{else}}
+        <p>[Pas de pochette]</p>
+      {{end}}
+      <h1>{{if .AlbumName}}{{.AlbumName}}{{else}}Album inconnu{{end}} — Damso</h1>
+      <p>Date de sortie : {{if .ReleaseDate}}{{.ReleaseDate}}{{else}}Non disponible{{end}}</p>
     </div>
 
-    <!-- Liste des morceaux à droite -->
+    <!-- Liste des morceaux -->
     <div class="track-list">
       <h2>Morceaux</h2>
       <ul>
-        {{range .Tracks}}
-        <li class="track-item">
-          <div class="track-details">
-            <p class="track-name">{{.Name}}</p>
-            <a href="{{.ExternalUrls.Spotify}}" target="_blank">Écouter ↗</a>
-          </div>
-        </li>
+        {{if .Tracks}}
+          {{range .Tracks}}
+          <li class="track-item">
+            <img class="track-cover" src="{{$.AlbumCover}}" alt="{{.Name}}">
+            <div class="track-details">
+              <p class="track-name">{{.Name}}</p>
+              <a href="{{.ExternalUrls.Spotify}}" target="_blank">Écouter ↗</a>
+            </div>
+          </li>
+          {{end}}
+        {{else}}
+          <p>Aucun morceau trouvé pour cet album.</p>
         {{end}}
       </ul>
     </div>
