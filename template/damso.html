@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>{{.AlbumName}} — Damso</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content page damso-container">
+    
+    <!-- Album à gauche -->
+    <div class="album-info">
+      <img class="album-cover" src="{{.AlbumCover}}" alt="{{.AlbumName}}">
+      <h1>{{.AlbumName}} — Damso</h1>
+      <p>Date de sortie : {{.ReleaseDate}}</p>
+    </div>
+
+    <!-- Liste des morceaux à droite -->
+    <div class="track-list">
+      <h2>Morceaux</h2>
+      <ul>
+        {{range .Tracks}}
+        <li class="track-item">
+          <div class="track-details">
+            <p class="track-name">{{.Name}}</p>
+            <a href="{{.ExternalUrls.Spotify}}" target="_blank">Écouter ↗</a>
+          </div>
+        </li>
+        {{end}}
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>

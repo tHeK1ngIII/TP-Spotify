@@ -1,23 +1,43 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <link rel="stylesheet" href="/style.css">
     <meta charset="utf-8" />
-    <title>TP spotify</title>
+    <title>TP Spotify</title>
+    <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
     <div class="background"></div>
     <div class="content">
+      <h1>Choisis un artiste</h1>
+
+      <!-- Images cliquables -->
+      <div class="artist-links">
+        <a href="/album/damso" class="artist-link">
+          <img src="/image/damso.jpg" alt="Damso" />
+          <p>Damso</p>
+        </a>
+
+        <a href="/track/laylow" class="artist-link">
+          <img src="/image/laylow.png" alt="Laylow" />
+          <p>Laylow</p>
+        </a>
+      </div>
     </div>
 
-    <!-- Images cliquables -->
-    <a href="/album/damso" class="damso-link">
-      <img src="/image/damso.jpg" alt="Damso" />
-    </a>
+    <script>
+      document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          document.body.classList.add("fade-out");
+          setTimeout(() => {
+            window.location.assign(link.getAttribute("href")); // garde l’historique
+          }, 500);
+        });
+      });
 
-    <a href="/track/laylow" class="laylow-link">
-      <img src="/image/laylow.png" alt="Laylow" />
-    </a>
-
+      window.addEventListener("beforeunload", () => {
+        document.body.classList.add("fade-out");
+      });
+    </script>
   </body>
 </html>

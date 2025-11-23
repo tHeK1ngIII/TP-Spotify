@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Laylow — Track</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content page">
+    <h1>{{.Name}}</h1>
+
+    {{if .Album.Images}}
+      <img class="album-cover" src="{{(index .Album.Images 0).Url}}" alt="{{.Album.Name}}">
+    {{else}}
+      <p>Aucune image disponible</p>
+    {{end}}
+
+    <p>Artiste : {{(index .Artists 0).Name}}</p>
+    <p>Album : {{.Album.Name}}</p>
+    <p>Date de sortie : {{.Album.ReleaseDate}}</p>
+
+    <a class="track-item" href="{{.ExternalUrls.Spotify}}" target="_blank">
+      Écouter sur Spotify ↗
+    </a>
+  </div>
+</body>
+</html>

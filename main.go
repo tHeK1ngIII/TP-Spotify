@@ -3,26 +3,19 @@ package main
 import (
 	"log"
 	"net/http"
-	"os"
-	"tpspotify/router"
+	"tpspotify/controller"
 )
 
 func main() {
-	// Charge le routeur
-	r := router.New()
-	// Définition du port (par défaut 8080 si aucune variable d'environnement n'est définie)
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
+	// Static files
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.Handle("/image/", http.StripPrefix("/image/", http.FileServer(http.Dir("image"))))
 
-	log.Printf("Démarrage du serveur sur le port http://localhost:%s\n", port)
+	// Routes
+	http.HandleFunc("/", controller.Home)
+	http.HandleFunc("/album/damso", controller.DamsoAlbum)
+	http.HandleFunc("/track/laylow", controller.LaylowSong)
 
-	// Démarrage du serveur avec gestion des erreurs
-	if err := http.ListenAndServe(":"+port, r); err != nil {
-		log.Fatal("Erreur lors du démarrage du serveur :", err)
-		/*http.Handle("/asset/image/", http.StripPrefix("/asset/image/", http.FileServer(http.Dir("image"))))*/
-
-	}
-
+	log.Println("Server running on http://localhost:8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
