@@ -1,0 +1,322 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_17dc338187ec4c43bd6206629e418f32
+  created: 1763370136817
+  modified: 1763370136817
+  description: ""
+collection:
+  - url: https://accounts.spotify.com/api/token
+    name: New Request
+    meta:
+      id: req_955bf002c3204e12b636a0d72112712c
+      created: 1763627362317
+      modified: 1763627362317
+      isPrivate: false
+      description: ""
+      sortKey: -1763627362317
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - name: grant_type
+          value: client_credentials
+        - name: client_id
+          value: a6b4939a7c644ce29650ec3de486c299
+        - name: client_secret
+          value: 789bc968246240d98a4fa79bdb049c70
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie
+    name: New Request
+    meta:
+      id: req_3b22bd8202e3402d9026d43b07e2573b
+      created: 1763629114579
+      modified: 1763630057104
+      isPrivate: false
+      description: ""
+      sortKey: -1763629114579
+    method: GET
+    headers:
+      - id: pair_d62f3f02ca7c4c30839e4d4cebbec412
+        name: Authorization
+        value: Bearer
+          BQApP42bmgIlRyMLATLwGg02CT4mIHSLHtSVxB2YWevVtIgPLV477lo25S-suyXc6mb0YrFMHVcLkAZmifo0fTNUgzeiJTXCM0_YGV8AvBdsA9Bcb1udJ_-3Ixr02DMzgcyyZfNYBTw
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://api.spotify.com/v1/artists/2UwqpfQtNuhBwviIC0f2ie/albums
+    name: New Request
+    meta:
+      id: req_0128f0edfa794d53a249b8a502e94345
+      created: 1763630062423
+      modified: 1763630866901
+      isPrivate: false
+      description: ""
+      sortKey: -1763630062423
+    method: GET
+    headers:
+      - name: Authorization
+        value: Bearer
+          BQApP42bmgIlRyMLATLwGg02CT4mIHSLHtSVxB2YWevVtIgPLV477lo25S-suyXc6mb0YrFMHVcLkAZmifo0fTNUgzeiJTXCM0_YGV8AvBdsA9Bcb1udJ_-3Ixr02DMzgcyyZfNYBTw
+        id: pair_cb2ef848cf504a5f9575c430d8a40009
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://api.spotify.com/v1/albums/4beTtJKeg3ITJsiVuxkiV0/tracks
+    name: New Request
+    meta:
+      id: req_b7bb92d8619d47ff90fe546cfbaaa400
+      created: 1763630932522
+      modified: 1763632529028
+      isPrivate: false
+      description: ""
+      sortKey: -1763629588501
+    method: GET
+    parameters:
+      - id: pair_2498eaf9cf354f3a980e30b32a0f880f
+        name: limit
+        value: "5"
+        description: ""
+        disabled: false
+    headers:
+      - name: Authorization
+        value: Bearer
+          BQBRhcitZtSc7nujgVi6K_ms_iSfeqtVGNq6eHpqQ3o4bMNcnUUUD8tftJnSe9OC6QO6KV8PFZEWcKjnCI1xIQlK3fh-LXq5poKhPAgSuLKm32S4iqhls_5s58fXc3Pnpc1sY7vXiWQ
+        id: pair_191c665731ae478ea82224b1b6a1f1a8
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://api.spotify.com/v1/tracks/6nkFbmDY84a9rejFSbIMdj
+    name: New Request
+    meta:
+      id: req_3b117e79e4ce4511adadf79c57dfae6d
+      created: 1763632597822
+      modified: 1763632796843
+      isPrivate: false
+      description: ""
+      sortKey: -1763632597822
+    method: GET
+    headers:
+      - name: Authorization
+        value: Bearer
+          BQBRhcitZtSc7nujgVi6K_ms_iSfeqtVGNq6eHpqQ3o4bMNcnUUUD8tftJnSe9OC6QO6KV8PFZEWcKjnCI1xIQlK3fh-LXq5poKhPAgSuLKm32S4iqhls_5s58fXc3Pnpc1sY7vXiWQ
+        id: pair_f1c25f42fcc34c5e97445bd45dbff66d
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://api.spotify.com/v1/artists/0LnhY2fzptb0QEs5Q5gM7S/top-tracks
+    name: New Request
+    meta:
+      id: req_de2c8b856bed4154932e5d0b317f37d8
+      created: 1763632913895
+      modified: 1763633770102
+      isPrivate: false
+      description: ""
+      sortKey: -1763632913895
+    method: GET
+    headers:
+      - name: Authorization
+        value: Bearer
+          BQBRhcitZtSc7nujgVi6K_ms_iSfeqtVGNq6eHpqQ3o4bMNcnUUUD8tftJnSe9OC6QO6KV8PFZEWcKjnCI1xIQlK3fh-LXq5poKhPAgSuLKm32S4iqhls_5s58fXc3Pnpc1sY7vXiWQ
+        id: pair_0ee5963ec95b4e71ae1f7473a9f62f47
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://api.spotify.com/v1/tracks/67Pf31pl0PfjBfUmvYNDCL
+    name: New Request
+    meta:
+      id: req_cbc3f9618bb94bb1a7305c51d2938f8e
+      created: 1763633779601
+      modified: 1763634149599
+      isPrivate: false
+      description: ""
+      sortKey: -1763633779601
+    method: GET
+    headers:
+      - name: Authorization
+        value: Bearer
+          BQBRhcitZtSc7nujgVi6K_ms_iSfeqtVGNq6eHpqQ3o4bMNcnUUUD8tftJnSe9OC6QO6KV8PFZEWcKjnCI1xIQlK3fh-LXq5poKhPAgSuLKm32S4iqhls_5s58fXc3Pnpc1sY7vXiWQ
+        id: pair_af6c30b0635b4edc9d647375c91a23c3
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T
+    name: New Request
+    meta:
+      id: req_3521283b5b504052926877e5f1c5a504
+      created: 1763634155771
+      modified: 1763635321038
+      isPrivate: false
+      description: ""
+      sortKey: -1763634155771
+    method: GET
+    headers:
+      - name: Authorization
+        value: Bearer
+          BQD3iIa81wKOWXZyByfBe-S4mdMnU4bJe4W6fsf6SuqyXE7kmlRY42OPpmgShl2t94hUgaTlTXfYNd6V6krvTeM35m88FU184VTT5yGnPnHofdsx5bUaNVUFGDUM1jMh57ALytUwJx8
+        id: pair_6d0a4760421e475ead63abe5553d4c1f
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T/episodes
+    name: New Request
+    meta:
+      id: req_6b9e30791d2c455090b3de13341c7049
+      created: 1763635473177
+      modified: 1763636762356
+      isPrivate: false
+      description: ""
+      sortKey: -1763635473177
+    method: GET
+    parameters:
+      - id: pair_b290d63b9f1b4ea483a2425d0771fc51
+        name: limit
+        value: "3"
+        description: ""
+        disabled: false
+    headers:
+      - name: Authorization
+        value: Bearer
+          BQD3iIa81wKOWXZyByfBe-S4mdMnU4bJe4W6fsf6SuqyXE7kmlRY42OPpmgShl2t94hUgaTlTXfYNd6V6krvTeM35m88FU184VTT5yGnPnHofdsx5bUaNVUFGDUM1jMh57ALytUwJx8
+        id: pair_b111c03a4c4f470dba58dfa2e7b44a48
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T/episodes
+    name: New Request
+    meta:
+      id: req_8eb6eac3483b415fa7ac178d8745a33d
+      created: 1763636303876
+      modified: 1763636381754
+      isPrivate: false
+      description: ""
+      sortKey: -1763636303876
+    method: GET
+    parameters:
+      - id: pair_1cb0778ac86d41ba9b32845127987152
+        name: limit
+        value: "1"
+        description: ""
+        disabled: false
+      - id: pair_e2e5aea7482548ffb492715e11e81220
+        name: offset
+        value: "1"
+        description: ""
+        disabled: false
+    headers:
+      - name: Authorization
+        value: Bearer
+          BQD3iIa81wKOWXZyByfBe-S4mdMnU4bJe4W6fsf6SuqyXE7kmlRY42OPpmgShl2t94hUgaTlTXfYNd6V6krvTeM35m88FU184VTT5yGnPnHofdsx5bUaNVUFGDUM1jMh57ALytUwJx8
+        id: pair_8244d2253fda4a9b8e36c2cf38a09853
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_746ad30cf040b03a3d396b04635f42243a81e1bc
+    created: 1763370136820
+    modified: 1763627192025
+  cookies:
+    - key: sessionid
+      value: k6tiorps3rvdzdoo9ew2pg7hzxrojw7l
+      maxAge: 86400
+      domain: developer.riotgames.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-11-17T09:14:30.196Z
+      lastAccessed: 2025-11-17T10:20:28.426Z
+      sameSite: lax
+      id: 6b3848eb-5864-4f80-ba21-9c89fe168949
+    - key: __Host-device_id
+      value: AQCoJrfVkH4SuU-1t8MaXHdZuR_cyh2-n2xuwdn9hXisCtaV8vgSrOD5GaXDLKiH7kTIX-SsDQwvQYD_s4kHk84Rm6DYJMSDJZI
+      maxAge: 2147483647
+      domain: accounts.spotify.com
+      path: /
+      secure: true
+      httpOnly: true
+      extensions:
+        - Version=1
+      hostOnly: true
+      creation: 2025-11-20T08:26:32.023Z
+      lastAccessed: 2025-11-20T08:26:32.023Z
+      sameSite: lax
+      id: 9b5f3826-d905-44a0-9f06-70588b3c3555
+    - key: sp_tr
+      value: "false"
+      domain: accounts.spotify.com
+      path: /
+      secure: true
+      extensions:
+        - Version=1
+      hostOnly: false
+      creation: 2025-11-20T08:26:32.024Z
+      lastAccessed: 2025-11-20T08:26:32.024Z
+      sameSite: lax
+      id: b2132f3b-76dd-4c57-907e-f6a75d567261
+environments:
+  name: Base Environment
+  meta:
+    id: env_746ad30cf040b03a3d396b04635f42243a81e1bc
+    created: 1763370136819
+    modified: 1763370136819
+    isPrivate: false
